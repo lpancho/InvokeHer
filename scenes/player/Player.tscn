@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/player/Player.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 32 )
+
+[node name="Player" type="KinematicBody2D"]
+position = Vector2( 407.55, 346.75 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+offset = Vector2( 10, 10 )
+transform = Transform2D( 1, 0, 0, 1, 10, 10 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 15
+
+[node name="Spell" type="Label" parent="CanvasLayer/VBoxContainer"]
+margin_right = 66.0
+margin_bottom = 14.0
+text = "asdasdasd"
+
+[node name="Action" type="Label" parent="CanvasLayer/VBoxContainer"]
+margin_top = 29.0
+margin_right = 66.0
+margin_bottom = 60.0
+text = "None
+"
